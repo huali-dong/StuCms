@@ -1,3 +1,5 @@
+
+//链接数据库
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/Mydamaicms', { useNewUrlParser: true });
 

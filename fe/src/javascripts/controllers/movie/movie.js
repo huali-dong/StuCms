@@ -83,8 +83,7 @@ const handleRemovemovie = async function(_page){
 //save视图的控制器
 const save = (req,res,next)=>{ 
     res.render(movie_save_tempalte)
-    bindSaveEvent();
-   
+    bindSaveEvent();  
 }
 
 //save的事件绑定
@@ -96,7 +95,19 @@ const bindSaveEvent = ()=>{
     $('.movie-save #save-moive-form').submit(handleSaveSubmit)
     
     $("#movieLogo").on('change',function(){
-        let imgdom = $("#portrait");
+        let imgdom = $("#portrait1");
+        let imgurl = window.URL.createObjectURL(this.files[0]);
+        imgdom.attr('src',imgurl)
+        imgdom.show()
+    }),
+    $("#directorLogo").on('change',function(){
+        let imgdom = $("#portrait2");
+        let imgurl = window.URL.createObjectURL(this.files[0]);
+        imgdom.attr('src',imgurl)
+        imgdom.show()
+    }),
+    $("#starLogo").on('change',function(){
+        let imgdom = $("#portrait3");
         let imgurl = window.URL.createObjectURL(this.files[0]);
         imgdom.attr('src',imgurl)
         imgdom.show()
@@ -107,7 +118,6 @@ const bindSaveEvent = ()=>{
 let _isLoading = false
 const handleSaveSubmit =  async function(e){
     e.preventDefault()
-
     //函数防抖，防止多次提交
     if ( _isLoading ) return false;
 
@@ -116,9 +126,10 @@ const handleSaveSubmit =  async function(e){
     // let _params = qs.parse($(this).serialize())
 
     let result = await movie_model.save()
-    
+    console.log("232")
     _isLoading = false
 
+    console.log(result,"2323")
     handleToastByData(result)
     // handleToastByData(result, { isReact: false, success: () => {
     //     bus.emit('go', '/movie-list')

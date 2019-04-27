@@ -6,14 +6,27 @@ const PATH = require('path') // 路径
 //在本地数据库中创建一个document
 var MovieModel = mongoose.model('movies', new mongoose.Schema({
     //定义集合中存储的数据名，数据格式
-    movieName: String,
-    directorName: String,
-    starName: String,
-    showTime: String,
-    language:String,
-    movieType:String,
-    createTime: String,
-    movieLogo: String
+    movieId:Number,//电影Id
+    movieName: String,//电影名称
+    directorName: [{
+        name:String,//导演名字
+        img:String,//导演照片
+    }],//导演
+    starName:[
+        {
+            name:String,//演员名字
+            img:String//演员照片
+        }
+     ] ,
+    showTime: String,//上映时间
+    language:String,//语言
+    movieType:String,//电影类型
+    createTime: String,//创建时间
+    movieLogo: String,//电影图片
+    isShowing:Boolean,//正在上映
+    score:Number,//电影评分
+    region:String,//电影区域
+
 }));
 
 // 返回列表数据

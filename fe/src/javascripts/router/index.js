@@ -6,11 +6,6 @@ import home_template from '../views/home.html';
 // 404视图
 import not_found_template from '../views/404.html';
 
-// position 控制器
-import position_controller from '../controllers/position/position';
-
-//singer页面控制器
-import singer_controller from "../controllers/singer/singer";
 
 //movie页面控制器
 import movie_controller from "../controllers/movie/movie";
@@ -38,15 +33,6 @@ const _init = () => {
     router.route('/home', (req, res, next) => { // 当路由切换进来的时候执行
         res.render(home_template);
     })
-    // 保存职位路由
-    router.route('/position-save', position_controller.save);
-    // 职位列表路由
-    router.route('/position-list', position_controller.list);
-    router.route('/position-update', position_controller.update);
-    router.route("/singer-list",singer_controller.list);
-    router.route("/singer-add",singer_controller.add);
-    router.route("/singer-update",singer_controller.update);
-    router.route("/singer-search",singer_controller.search);
 
 
     //电影路由

@@ -11,7 +11,7 @@
 
                 <div class="col-sm-10">
                     <input  type="file" name="movieLogo" id="movieLogo" />
-                    <img id="portrait" src="" style="display:none;width: 100px;height: 100px; margin-top: 20px" />
+                    <img id="portrait1" src="" style="display:none;width: 100px;height: 100px; margin-top: 20px" />
 
                 </div>
             </div>
@@ -23,10 +23,21 @@
                 </div>
             </div>
             <div class="form-group">
+                    <label for="movieId" class="col-sm-2 control-label">电影Id</label>
+    
+                    <div class="col-sm-10">
+                        <input required type="text" class="form-control" name="movieId" id="movieId" placeholder="请输入电影Id">
+                    </div>
+                </div>
+            <div class="form-group">
                 <label for="directorName" class="col-sm-2 control-label">导演</label>
 
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="directorName" id="directorName" placeholder="请输入导演">
+                    <div class="col-sm-10" style="margin-top:10px">
+                            <input  type="file" name="directorLogo" id="directorLogo" />
+                            <img id="portrait2" src="" style="display:none;width: 100px;height: 100px; margin-top: 20px" />
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -34,6 +45,11 @@
 
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="starName" id="starName" placeholder="请输入主演">
+                    <div class="col-sm-10" style="margin-top:10px">
+                            <input  type="file" name="starLogo" id="starLogo" />
+                            <img id="portrait3" src="" style="display:none;width: 100px;height: 100px; margin-top: 20px" />
+        
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -56,6 +72,27 @@
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="movieType" id="movieType" placeholder="请输入影片类型">
                 </div>
+            </div>
+            <div class="form-group">
+                    <label for="score" class="col-sm-2 control-label">电影评分</label>
+    
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="score" id="score" placeholder="请输入影片得分">
+                    </div>
+            </div>
+            <div class="form-group">
+                    <label for="region" class="col-sm-2 control-label">电影区域</label>
+    
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="region" id="region" placeholder="请输入影片类型">
+                    </div>
+            </div>
+            <div class="form-group">
+                    <label for="isShowimg" class="col-sm-2 control-label">是否正在上映</label>
+    
+                    <div class="col-sm-10">
+                        <input type="checkBox"  name="isShowimg" id="isShowimg" >
+                    </div>
             </div>
         </div>
 
