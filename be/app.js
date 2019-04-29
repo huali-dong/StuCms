@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser'); // 解析cookie
 var logger = require('morgan');
 var session = require("express-session");//session
-
+var bodyParser = require('body-parser')
 var { version } = require('./config')//加上版本号的
 
 // 路由工具，在routes模块，express框架自带的路由工具
@@ -18,6 +18,7 @@ var seatRouter = require("./routes/seat");
 // 应用程序
 var app = express();
 
+app.use(bodyParser.json())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

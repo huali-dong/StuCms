@@ -126,14 +126,14 @@ const handleSaveSubmit =  async function(e){
     // let _params = qs.parse($(this).serialize())
 
     let result = await movie_model.save()
-    console.log("232")
+    // console.log("232",result)
     _isLoading = false
 
-    console.log(result,"2323")
-    handleToastByData(result)
-    // handleToastByData(result, { isReact: false, success: () => {
-    //     bus.emit('go', '/movie-list')
-    // }})
+    // console.log(result,"2323")
+    // handleToastByData(result)
+    handleToastByData(result, { isReact: false, success: () => {
+        bus.emit('go', '/movie-list')
+    }})
 }
 
 
@@ -165,7 +165,10 @@ const handleUpdateSubmit = async function(e){
     // let _datastr = $(this).serialize()
     // let _data = qs.parse(_datastr)
     let _results = await movie_model.update()  
-    handleToastByData(_results)
+    // handleToastByData(_results)
+    handleToastByData(results, { isReact: false, success: () => {
+        bus.emit('go', '/movie-list')
+    }})
 }
 
 export default {

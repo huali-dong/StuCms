@@ -8,16 +8,16 @@ var MovieModel = mongoose.model('movies', new mongoose.Schema({
     //定义集合中存储的数据名，数据格式
     movieId:Number,//电影Id
     movieName: String,//电影名称
-    directorName: [{
-        name:String,//导演名字
-        img:String,//导演照片
-    }],//导演
-    starName:[
-        {
-            name:String,//演员名字
-            img:String//演员照片
-        }
-     ] ,
+    directorName: String,
+    // {
+    //     name:String,//导演名字
+    //     img:String,//导演照片
+    // },//导演
+    starName:String,//演员名字
+        // {
+        //     name:String,//演员名字
+        //     img:String//演员照片
+        // },
     showTime: String,//上映时间
     language:String,//语言
     movieType:String,//电影类型
@@ -88,9 +88,11 @@ const save = (body) => {
     })
         .save() //保存数据带数据库
         .then((result) => {
+            // console.log(result,"pjhdl")
             return result
         })
         .catch((err) => {
+            // console.log(err,"pajsa")
             return false
         })
 }

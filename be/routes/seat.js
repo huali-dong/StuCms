@@ -6,10 +6,11 @@ const seat_controller = require("../controllers/seat");
 
 //在发送路由请求的时候设置响应头
 const resApplicationJson = (req,res,next)=>{
-    res.set('content-type', 'application/json; charset=utf8')
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-    res.header("Access-Control-Allow-Origin", "*");//设置跨越 白名单
+    // res.set('content-type', 'application/json; charset=utf8')
+    res.set('Content-Type', 'application/x-www-form-urlencoded')
+    res.set("Access-Control-Allow-Headers", "X-Requested-With");
+    res.set("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+    res.set("Access-Control-Allow-Origin", "*");//设置跨越 白名单
     next();
 }
 

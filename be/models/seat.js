@@ -12,12 +12,10 @@ let default_logo = '/uploads/movielogos/default.jpg'
 const add =async (body) => {
     //此时的时间，事件戳
     let _timestamp = Date.now()
-    body.movieId=  body.movieId  || default_logo
+    console.log(body,"hdia")
+    // body.movieId=  body.movieId  || default_logo
     return new SeatModel({
-        // ...body,
-        id:1,
-        row:2,
-        col:3,
+        ...body,
         createTime: _timestamp
     }).save() //保存数据带数据库
         .then((result) => {

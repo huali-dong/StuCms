@@ -19,6 +19,8 @@ const save = async (req, res) => {
     // 接收到发送过来的数据 req.body, 然后存入数据库
     // res.set('content-type', 'application/json; charset=utf8')
     let _data = await movie_model.save(req.body)        //post用req.body
+    console.log(req.body,"dhl")
+    console.log(_data,"234")
     handleData(_data,res,'movie')    
 }
 

@@ -31,8 +31,7 @@ function fileFilter (req, file, cb) {
 // var upload = multer({dest: PATH.resolve(__dirname, '../public/uploads')})
 // 已经是一个中间件了
 var upload = multer({ storage, fileFilter }).single('movieLogo') // multer.single处理单文件上层,还有一个处理多文件的
-
-
+// var upload = multer({storage,fileFilter}).array('movieLogos',"3")
 // 在upload中间件外面套上一个空壳中间件，目的是为了让upload处理错误后选择是否继续向下执行
 const fileUpload = function (req, res, next) {
   upload(req, res, function (err) {
