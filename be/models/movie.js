@@ -24,6 +24,7 @@ var MovieModel = mongoose.model('movies', new mongoose.Schema({
     createTime: String,//创建时间
     movieLogo: String,//电影图片
     isShowing:Boolean,//正在上映
+    price:String,//电影票价
     score:Number,//电影评分
     region:String,//电影区域
 
