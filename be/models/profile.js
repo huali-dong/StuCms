@@ -19,6 +19,7 @@ const update = (body,list)=>{
         personLogo : body.personLogo
     })
     .then((result)=>{
+        console.log(result)
         return result;
     })
     .catch(()=>{

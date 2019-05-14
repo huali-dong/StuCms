@@ -10,7 +10,7 @@ const update = (id)=>{
                 resolve(results)
             },
             error:()=>{
-                console.log(23);
+                console.log("接口返回错误");
             }
         })
     })

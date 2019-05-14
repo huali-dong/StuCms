@@ -14,6 +14,9 @@ var userRouter = require("./routes/user");
 var profileRouter = require("./routes/profile");
 var seatRouter = require("./routes/seat");
 
+var frontAdminRouter = require("./routes/frontAdmin");
+var frontUserRouter = require("./routes/frontUser");
+
 
 // 应用程序
 var app = express();
@@ -53,12 +56,19 @@ app.use('/api/'+ version +'/profile',profileRouter);
 
 app.use('/api/'+ version +'/seat',seatRouter);
 
+app.use('/api/'+ version +'/frontadmin', frontAdminRouter);
+
+app.use('/api/'+ version +'/frontuser',frontUserRouter);
+
+
+
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+app.disable('etag');
 
 // error handler
 app.use(function(err, req, res, next) {

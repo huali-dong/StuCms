@@ -45,6 +45,7 @@ const list = async ({ pageNo = 1, pageSize = 5, search = '' }) => {
     .skip((pageNo - 1) * pageSize)// 从哪一页开始
     .limit(~~pageSize)// 截取多少
     .then((results) => {
+        // console.log(results,"dhd")
         return { 
             items: results, 
             pageInfo: { // 页码信息

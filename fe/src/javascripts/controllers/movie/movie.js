@@ -95,23 +95,23 @@ const bindSaveEvent = ()=>{
     $('.movie-save #save-moive-form').submit(handleSaveSubmit)
     
     $("#movieLogo").on('change',function(){
-        let imgdom = $("#portrait1");
-        let imgurl = window.URL.createObjectURL(this.files[0]);
-        imgdom.attr('src',imgurl)
-        imgdom.show()
-    }),
-    $("#directorLogo").on('change',function(){
-        let imgdom = $("#portrait2");
-        let imgurl = window.URL.createObjectURL(this.files[0]);
-        imgdom.attr('src',imgurl)
-        imgdom.show()
-    }),
-    $("#starLogo").on('change',function(){
-        let imgdom = $("#portrait3");
+        let imgdom = $("#portrait");
         let imgurl = window.URL.createObjectURL(this.files[0]);
         imgdom.attr('src',imgurl)
         imgdom.show()
     })
+    // $("#directorLogo").on('change',function(){
+    //     let imgdom = $("#portrait2");
+    //     let imgurl = window.URL.createObjectURL(this.files[0]);
+    //     imgdom.attr('src',imgurl)
+    //     imgdom.show()
+    // }),
+    // $("#starLogo").on('change',function(){
+    //     let imgdom = $("#portrait3");
+    //     let imgurl = window.URL.createObjectURL(this.files[0]);
+    //     imgdom.attr('src',imgurl)
+    //     imgdom.show()
+    // })
 }
 
 // 开关防止多次提交
@@ -156,6 +156,13 @@ const bindUpdateEvent =()=>{
     })
 
     $('.movie-update #update-movie-form').submit(handleUpdateSubmit)
+
+    $("#movieLogo").on('change',function(){
+        let imgdom = $("#portrait");
+        let imgurl = window.URL.createObjectURL(this.files[0]);
+        imgdom.attr('src',imgurl)
+        imgdom.show()
+    })
 }
 
 //update的表单提交
@@ -165,8 +172,9 @@ const handleUpdateSubmit = async function(e){
     // let _datastr = $(this).serialize()
     // let _data = qs.parse(_datastr)
     let _results = await movie_model.update()  
+    console.log(_results)
     // handleToastByData(_results)
-    handleToastByData(results, { isReact: false, success: () => {
+    handleToastByData(_results, { isReact: false, success: () => {
         bus.emit('go', '/movie-list')
     }})
 }

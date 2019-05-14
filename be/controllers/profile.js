@@ -21,6 +21,7 @@ const update =async (req,res,next)=>{
     decrypted += decipher.final('utf-8');
    if(decrypted === _data.passwordold){//将数据库的密码与输入的旧密码进行对比，相等才能修改，
         let _result = await profile_model.update(_data,_list);
+        console.log(_result,"dhldhl")
         handleData(_result,res,"profile");
    }else{
        res.render("singer",{

@@ -26,7 +26,7 @@ const bindEvent = ()=>{
 
 const update = async ()=>{
     let _result = await profile_model.update();
-    // console.log(_result)
+    console.log(_result)
     if(_result.status === 200){
         modal(_result,{
             success: "修改成功",

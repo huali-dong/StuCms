@@ -18,7 +18,7 @@ const save = () => {
             url: '/api/v1/movie/save',
             type: 'POST',
             success: (results) => {
-                console.log(results,"dhl")
+                // console.log(results,"dhl")
                 resolve(results)
             }
         })

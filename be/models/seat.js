@@ -1,19 +1,22 @@
 const mongoose = require('../util/mongoose')
 
 var SeatModel = mongoose.model('seat',new mongoose.Schema({
-    id:String,//座位Id
-    row:Number,//行
-    col:Number,//列
-    used:Number,//是否选中  0 可用 1 被锁定  2 已售出
     movieId:String,//电影Id
+    userId:String,//用户Id
+    position:[String],//座位集合
+    movieName:String,
+    pic:String,
+    showId:String,
+    price:String,
+    beginTime:String,//开始时间
+    Day:String,//日期
+    cinemaName:String
 }))
 
-let default_logo = '/uploads/movielogos/default.jpg'
 const add =async (body) => {
     //此时的时间，事件戳
     let _timestamp = Date.now()
-    console.log(body,"hdia")
-    // body.movieId=  body.movieId  || default_logo
+    // console.log(body,"hdia")
     return new SeatModel({
         ...body,
         createTime: _timestamp
@@ -34,7 +37,48 @@ const update = async(body)=>{
         return false
     })
 }
+
+const findSelected = async({showId})=>{//返回当前座位数据信息
+    // console.log(id,"idd")
+    return SeatModel.find({showId:showId}).
+    then((results) => {     //返回数据库的数据
+        // console.log(results,"kdsdh")
+        return results
+    }).
+    catch((err) => {
+        console.log(err,"err")
+        return false
+    })
+}
+
+
+
+const findOrder = async({userId})=>{//订单接口数据获取，根据用户名
+    // console.log(id,"idd")
+    return SeatModel.find({userId:userId}).
+    then((results) => {     //返回数据库的数据
+        // console.log(results,"kdsdh")
+        return results
+    }).
+    catch((err) => {
+        console.log(err,"err")
+        return false
+    })
+}
+
+//删除一条数据
+const remove = async ({ _id })=>{
+    return SeatModel.deleteOne({ _id:_id }).then((results)=>{
+        results.removeId = _id   //这个id是返回给前端用的
+        return results
+    }).catch((err)=>{
+        return false
+    })
+}
 module.exports={
     add,
-    update
+    update,
+    findSelected,
+    findOrder,
+    remove
 }

@@ -37,10 +37,10 @@ const fileUpload = function (req, res, next) {
   upload(req, res, function (err) {
     if (err) {
           res.set('content-type', 'application/json; charset=utf8')
-      res.render('movie', {   //movie模板。ejs
-          code: 501,
-          data: JSON.stringify({ msg: '请上传正确格式的图片' })
-      })
+          res.render('movie', {   //movie模板。ejs
+              code: 501,
+              data: JSON.stringify({ msg: '请上传正确格式的图片' })
+          })
     } else {
       // 一切都好
       next()
