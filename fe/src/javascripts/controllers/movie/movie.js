@@ -62,6 +62,7 @@ const bindListEvent = (_page)=>{
 const handleRemovemovie = async function(_page){
     let id = $(this).parents('tr').data('id')
     let _data = await movie_model.remove({ id:id })
+    // console.log(_data)
    // 如果此页种只有一条数据，说明删除之后需要跳转到前一页 
     // 删除的时候此页还有多少条数据
     let trs = $('.movie-list__tabel tr[data-id]')
@@ -180,7 +181,7 @@ const handleUpdateSubmit = async function(e){
 }
 
 export default {
-    lead,
+    // lead,
     list,
     save,
     update

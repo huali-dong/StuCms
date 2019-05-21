@@ -2,7 +2,7 @@ const mongoose = require("../util/mongoose");
 const crypto = require("crypto");
 
 var UserModel = mongoose.model("frontUsers",new mongoose.Schema({
-    mobile :String,
+    mobile : String,
     password :String,
     signupTime :String,
 }));
@@ -53,7 +53,7 @@ const judgeUser = (mobile)=>{
     .then((result)=>{
         //返回的是一个数组
         return result;
-    })
+    }) 
     .catch(()=>{
         return false;
     })

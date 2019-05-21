@@ -1,5 +1,5 @@
 var PATH = require('path')
-var multer = require('multer')
+var multer = require('multer')//Multer 是一个 node.js 中间件，用于处理 multipart/form-data 类型的表单数据，它主要用于上传文件。它是写在 busboy 之上非常高效。
 
 // 控制文件存储位置和名字
 var storage = multer.diskStorage({

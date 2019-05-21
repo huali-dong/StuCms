@@ -5,6 +5,7 @@ import bus from '../util/bus';
 import home_template from '../views/home.html';
 // 404视图
 import not_found_template from '../views/404.html';
+ import movie_template from "../views/movies/movie-list.html"
 
 
 //movie页面控制器
@@ -14,6 +15,10 @@ import movie_controller from "../controllers/movie/movie";
 import page_header_controller from "../controllers/page-header";
 //profile页面控制器
 import profile_controller from "../controllers/profile/profile";
+
+import order_controller from "../controllers/order/order";
+
+import frontProfile_controller from "../controllers/frontProfile/frontProfile"
 var router = null
 
 // 启动路由的方法
@@ -30,8 +35,8 @@ const _init = () => {
     router.route("/",page_header_controller.render);
 
     // 开始匹配各个路由
-    router.route('/home', (req, res, next) => { // 当路由切换进来的时候执行
-        res.render(home_template);
+    router.route('/movie-list', (req, res, next) => { // 当路由切换进来的时候执行
+        res.render(movie_template);
     })
 
 
@@ -44,6 +49,10 @@ const _init = () => {
     //个人中心路由
     router.route("/profile-list",profile_controller.list)
 
+    router.route("/order-list",order_controller.list)
+    
+    //前台用户管理
+    router.route("/frontProfile-list",frontProfile_controller.list)
 
     // 404路由
     router.route('/not-found', (req, res, next) => { // 当路由切换进来的时候执行
@@ -54,7 +63,7 @@ const _init = () => {
     //上面的没有匹配到就会跳转404路由或者首页
     router.route('*', (req, res, next) => {
         if ( req.url === '' ) { // 刚进入项目，没有hash值，重定向到home
-            res.redirect('/home')
+            res.redirect('/movie-list')
         } else { // 如果路径匹配不到，导向404
             res.redirect('/not-found')
         }     

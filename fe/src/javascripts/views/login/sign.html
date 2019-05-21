@@ -1,7 +1,8 @@
 
 {{ if data !== "signup"}}
 <div class="top-buttons-agileinfo" id="signin">
-    <a href="javascript:void(0)"   class="active">Sign In</a><a data-type="signup" class="switch-btn"  href="javascript:void(0)">Sign Up</a>
+    <!-- <a href="javascript:void(0)"   class="active">Sign In</a> 
+     <a data-type="signup" class="switch-btn"  href="javascript:void(0)">Sign Up</a> -->
     </div>
     <h1>管理员登录</h1>
     <div class="main-agileits">
@@ -11,8 +12,8 @@
                         <input type="text" name="username" placeholder="username" required="" />
                         <input type="password" name="password" placeholder="password" required="" />
                     <div class="submit-w3l">
-                        <!-- <input type="submit" value="Sign in"> -->
-                        <button id="span-signin" >Sign in</button>
+                        <input type="submit" value="Sign in">
+                        <!-- <button id="span-signin" >Sign in</button> -->
                     </div>
                     <!-- <p class="p-bottom-w3ls" id="signup"><a href="javascript:(0)">如果还没有账号,点击这里</a>加入我们</p> -->
                 </form>
@@ -20,10 +21,10 @@
     </div>
 
 {{ else}}
-    <div class="top-buttons-agileinfo" id="signup">
+    <!-- <div class="top-buttons-agileinfo" id="signup">
         <a href="javascript:void(0)" data-type="signin" class="switch-btn" >Sign In</a><a   class="active " href="javascript:(0)">Sign Up</a>
         </div>
-        <h1>管理员账号登录</h1>
+        <h1>管理员账号注册</h1>
         <div class="main-agileits">
                 <div class="form-w3-agile">
                     <h2 class="sub-agileits-w3layouts">Sign Up</h2>
@@ -31,12 +32,12 @@
                             <input type="text" name="username" placeholder="username" required="" />
                             <input type="password" name="password" placeholder="password" required="" />
                             <input type="text" name="nickname" placeholder="昵称"  />
-                        <div class="submit-w3l">
-                            <!-- <input type="submit" value="Sign up"> -->
-                            <button id="span-signup" >Sign up</button>
+                        <div class="submit-w3l"> 
+                            <input type="submit" value="Sign up">
+                             <button id="span-signup" >Sign up</button>
                         </div>
                     </form>
                 </div>
-        </div>
+        </div> -->
 
 {{/if}}

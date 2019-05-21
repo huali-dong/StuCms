@@ -16,7 +16,8 @@ var seatRouter = require("./routes/seat");
 
 var frontAdminRouter = require("./routes/frontAdmin");
 var frontUserRouter = require("./routes/frontUser");
-
+var orderRouter = require("./routes/order");
+var frontProfile = require("./routes/frontProfile")
 
 // 应用程序
 var app = express();
@@ -60,8 +61,9 @@ app.use('/api/'+ version +'/frontadmin', frontAdminRouter);
 
 app.use('/api/'+ version +'/frontuser',frontUserRouter);
 
+app.use('/api/'+ version +'/order',orderRouter);
 
-
+app.use("/api/"+ version +"/frontProfile",frontProfile)
 
 
 // catch 404 and forward to error handler

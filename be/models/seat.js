@@ -10,7 +10,10 @@ var SeatModel = mongoose.model('seat',new mongoose.Schema({
     price:String,
     beginTime:String,//开始时间
     Day:String,//日期
-    cinemaName:String
+    cinemaName:String,
+    orderNumber:String,
+    status:String,
+
 }))
 
 const add =async (body) => {
@@ -65,11 +68,26 @@ const findOrder = async({userId})=>{//订单接口数据获取，根据用户名
         return false
     })
 }
-
+const listone = async({orderNumber})=>{//订单接口数据获取，根据用户名
+    // console.log(id,"idd")
+    return SeatModel.findOne({orderNumber:orderNumber}).
+    then((results) => {     //返回数据库的数据
+        // console.log(results,"kdsdh")
+        return results
+    }).
+    catch((err) => {
+        console.log(err,"err")
+        return false
+    })
+}
 //删除一条数据
 const remove = async ({ _id })=>{
+    let id=_id;
+    console.log(_id,"123")
     return SeatModel.deleteOne({ _id:_id }).then((results)=>{
-        results.removeId = _id   //这个id是返回给前端用的
+        console.log(_id)
+        results.removeId = id //这个id是返回给前端用的
+        console.log(results)
         return results
     }).catch((err)=>{
         return false
@@ -80,5 +98,6 @@ module.exports={
     update,
     findSelected,
     findOrder,
-    remove
+    remove,
+    listone
 }

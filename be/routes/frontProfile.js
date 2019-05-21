@@ -2,7 +2,7 @@
 const express = require("express");
 var router = express.Router();
 
-const seat_controller = require("../controllers/seat");
+const frontProfile_controller = require("../controllers/frontProfile");
 
 //在发送路由请求的时候设置响应头
 const resApplicationJson = (req,res,next)=>{
@@ -15,10 +15,7 @@ const resApplicationJson = (req,res,next)=>{
 }
 
 router.use(resApplicationJson);
-router.post("/add",seat_controller.add);
-router.post('/update',seat_controller.update);
-router.post('/findone', seat_controller.findSelected);
-router.post('/finduserone', seat_controller.findOrder);
-router.delete('/remove', seat_controller.remove);
-router.get('/listone', seat_controller.listone)
+router.get("/list",frontProfile_controller.list);
+router.post('/update',frontProfile_controller.update);
+router.get('/listone', frontProfile_controller.listone)
 module.exports = router;

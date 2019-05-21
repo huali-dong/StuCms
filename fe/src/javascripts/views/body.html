@@ -7,7 +7,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>咕咕</b>影院</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>咕咕影院</b>管理系统</span>
+      <span class="logo-lg"><b>咕咕影片</b>管理系统</span>
     </a>
 
     <nav class="navbar navbar-static-top" role="navigation">
@@ -66,38 +66,52 @@
       </div>
       <ul class="sidebar-menu">
         <li class="header">菜单</li>
-        <li class="nav-link" to="/home"><a href="javascript:void(0)"><i class="fa fa-link"></i> <span>首页</span></a></li>
+        <!-- <li class="nav-link" to="/home"><a href="javascript:void(0)"><i class="fa fa-link"></i> <span>首页</span></a></li> -->
         <!-- 电影信息 -->
         <li class="treeview" >
           <a href="#">
-            <i class="fa fa-share"></i> <span>电影信息</span>
+            <i class="fa fa-share"></i> <span>影片信息</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <!-- <li class="nav-link" to='/movie-lead'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i>电影数据总览</a></li> -->
-            <li class="nav-link" to='/movie-list'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 电影列表</a></li>
-            <li class="nav-link" to='/movie-update'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 电影更新</a></li>
-            <li class="nav-link" to='/movie-save'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 添加电影</a></li> 
+            <li class="nav-link" to='/movie-list'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 影片列表</a></li>
+            <li class="nav-link" to='/movie-update'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 影片更新</a></li>
+            <li class="nav-link" to='/movie-save'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 添加影片</a></li> 
           </ul>
         </li>  
 
-        <!-- 座位情况 -->
+        <!-- 订单信息 -->
         <li class="treeview" >
           <a href="#">
-            <i class="fa fa-share"></i> <span>选座信息</span>
+            <i class="fa fa-share"></i> <span>订单信息</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <!-- <li class="nav-link" to='/movie-lead'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i>电影数据总览</a></li> -->
-            <li class="nav-link" to='/movie-list'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 座位列表</a></li>
+            <li class="nav-link" to='/order-list'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 查看订单</a></li>
             <!-- <li class="nav-link" to='/movie-update'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 电影更新</a></li> -->
             <!-- <li class="nav-link" to='/movie-save'><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 添加电影</a></li>  -->
           </ul>
         </li>  
+
+        <!-- 用户管理 -->
+        <li class="treeview" >
+          <a href="#">
+            <i class="fa fa-share"></i> <span>用户管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="nav-link" to="/frontProfile-list"><a href="javascript:void(0)"><i class="fa fa-folder"></i> <span>用户信息</span></a></li>
+          </ul>
+        </li>  
+
         <!-- 个人中心 -->
         <li class="treeview" >
           <a href="#">
@@ -110,6 +124,7 @@
             <li class="nav-link" to="/profile-list"><a href="javascript:void(0)"><i class="fa fa-folder"></i> <span>修改信息</span></a></li>
           </ul>
         </li>  
+        
       </ul>
     </section>
   </aside>
@@ -122,7 +137,7 @@
   </div>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      咪咕影院
+      咕咕影片
     </div>
     <strong>Copyright &copy; 2019 <a href="http://www.mobiletrain.org/">dhl</a>.</strong>
   </footer>

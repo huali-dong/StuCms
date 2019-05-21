@@ -28,10 +28,7 @@ const update =async (req,res,next)=>{
            code:205,
            data:JSON.stringify("输入的旧密码有误")
        })
-   }
-
-    
-    
+   } 
 }
 
 module.exports = {

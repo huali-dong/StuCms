@@ -6,6 +6,9 @@
     "start": "hotnode ./bin/www"
   },
   "dependencies": {
+    "alipay-mobile": "^3.0.9",
+    "alipay-nodejs": "0.0.13",
+    "alipay-sdk": "^3.0.5",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
